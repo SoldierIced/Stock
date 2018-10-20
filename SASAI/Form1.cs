@@ -24,7 +24,7 @@ namespace SASAI
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK)
             {
-                Formularios.AbrirFormularioHijos(new Alta_Materia(es.codigo));
+                Formularios.AbrirFormularioHijos(new Alta_Materia(es.codigo_MARCA));
 
             }
 
@@ -71,6 +71,30 @@ namespace SASAI
             {
                 Formularios.AbrirFormularioHijos(new Modificar_Producto(es.codigo, es.codigo_MARCA));
             }
+        }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void venderProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Escanear es = new Escanear();
+
+            Formularios.AbrirFormularioHijos(es);
+            if (es.DialogResult == DialogResult.OK)
+            {
+                Formularios.cerrarFormularioHijo();
+                Formularios.AbrirFormularioHijos(new Ventas_salida(es.codigo_MARCA, es.codigo));
+
+                Formularios.AbrirFormularioPadre(new Listar_Productos());
+            }
+        }
+
+        private void listarVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

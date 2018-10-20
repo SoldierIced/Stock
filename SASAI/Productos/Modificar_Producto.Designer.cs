@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 238);
+            this.ClientSize = new System.Drawing.Size(702, 246);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Marcat);
             this.Controls.Add(this.stock);

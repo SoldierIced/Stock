@@ -21,11 +21,22 @@ namespace SASAI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text != "") { 
 
-            this.DialogResult = DialogResult.OK;
-            codigo = textBox1.Text;
-            codigo_MARCA = textBox2.Text;
+            if (textBox2.Text != "") {
+                int aux = 0;
+                foreach (char a in textBox2.Text) {
+                    if (aux != 0) {
+                        if (aux < 7)
+                        {
+                            codigo_MARCA += a.ToString();
+                        }
+                        else { codigo += a.ToString(); }
+
+                    }
+                    
+                    aux++;
+                }
+                this.DialogResult=DialogResult.OK;
             this.Close();
             }
             else { MessageBox.Show("Ingrese algun valor en los campos."); }
@@ -40,6 +51,11 @@ namespace SASAI
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Escanear_Load(object sender, EventArgs e)
         {
 
         }

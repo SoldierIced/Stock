@@ -36,6 +36,10 @@
             this.listarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.venderProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevoProductoMasivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +47,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.materisaToolStripMenuItem,
-            this.productosToolStripMenuItem});
+            this.productosToolStripMenuItem,
+            this.ventaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -78,7 +83,8 @@
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listarProductosToolStripMenuItem,
             this.editarProductoToolStripMenuItem,
-            this.nuevoProductoToolStripMenuItem});
+            this.nuevoProductoToolStripMenuItem,
+            this.nuevoProductoMasivoToolStripMenuItem});
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
             this.productosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.productosToolStripMenuItem.Text = "Productos";
@@ -86,23 +92,53 @@
             // listarProductosToolStripMenuItem
             // 
             this.listarProductosToolStripMenuItem.Name = "listarProductosToolStripMenuItem";
-            this.listarProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarProductosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.listarProductosToolStripMenuItem.Text = "Listar productos";
             this.listarProductosToolStripMenuItem.Click += new System.EventHandler(this.listarProductosToolStripMenuItem_Click);
             // 
             // editarProductoToolStripMenuItem
             // 
             this.editarProductoToolStripMenuItem.Name = "editarProductoToolStripMenuItem";
-            this.editarProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editarProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editarProductoToolStripMenuItem.Text = "Editar producto";
             this.editarProductoToolStripMenuItem.Click += new System.EventHandler(this.editarProductoToolStripMenuItem_Click);
             // 
             // nuevoProductoToolStripMenuItem
             // 
             this.nuevoProductoToolStripMenuItem.Name = "nuevoProductoToolStripMenuItem";
-            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevoProductoToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.nuevoProductoToolStripMenuItem.Text = "Nuevo Producto";
             this.nuevoProductoToolStripMenuItem.Click += new System.EventHandler(this.nuevoProductoToolStripMenuItem_Click);
+            // 
+            // ventaToolStripMenuItem
+            // 
+            this.ventaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listarVentasToolStripMenuItem,
+            this.venderProductoToolStripMenuItem});
+            this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.ventaToolStripMenuItem.Text = "Venta";
+            this.ventaToolStripMenuItem.Click += new System.EventHandler(this.ventaToolStripMenuItem_Click);
+            // 
+            // listarVentasToolStripMenuItem
+            // 
+            this.listarVentasToolStripMenuItem.Name = "listarVentasToolStripMenuItem";
+            this.listarVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listarVentasToolStripMenuItem.Text = "Listar Ventas";
+            this.listarVentasToolStripMenuItem.Click += new System.EventHandler(this.listarVentasToolStripMenuItem_Click);
+            // 
+            // venderProductoToolStripMenuItem
+            // 
+            this.venderProductoToolStripMenuItem.Name = "venderProductoToolStripMenuItem";
+            this.venderProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.venderProductoToolStripMenuItem.Text = "Vender producto";
+            this.venderProductoToolStripMenuItem.Click += new System.EventHandler(this.venderProductoToolStripMenuItem_Click);
+            // 
+            // nuevoProductoMasivoToolStripMenuItem
+            // 
+            this.nuevoProductoMasivoToolStripMenuItem.Name = "nuevoProductoMasivoToolStripMenuItem";
+            this.nuevoProductoMasivoToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.nuevoProductoMasivoToolStripMenuItem.Text = "Nuevo Producto (Masivo)";
             // 
             // Form1
             // 
@@ -131,5 +167,9 @@
         private System.Windows.Forms.ToolStripMenuItem listarProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ventaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listarVentasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem venderProductoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevoProductoMasivoToolStripMenuItem;
     }
 }

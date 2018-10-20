@@ -105,6 +105,19 @@
     <Compile Include="Varios\Validacion.Designer.cs">
       <DependentUpon>Validacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases SQL\Ventas.cs" />
+    <Compile Include="Ventas\Ventas_salida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventas_salida.Designer.cs">
+      <DependentUpon>Ventas_salida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Ventas_Listar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Ventas_Listar.Designer.cs">
+      <DependentUpon>Ventas_Listar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Productos\Modificar_Producto.resx">
       <DependentUpon>Modificar_Producto.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +153,12 @@
     </Compile>
     <EmbeddedResource Include="Varios\Validacion.resx">
       <DependentUpon>Validacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Ventas_salida.resx">
+      <DependentUpon>Ventas_salida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Ventas_Listar.resx">
+      <DependentUpon>Ventas_Listar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

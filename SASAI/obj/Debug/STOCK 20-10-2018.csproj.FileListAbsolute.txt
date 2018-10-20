@@ -16,3 +16,5 @@ C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\STOCK 20-10-2018.csproj.GenerateRes
 C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\STOCK 20-10-2018.csproj.CoreCompileInputs.cache
 C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\SASAI.exe
 C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\SASAI.pdb
+C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\SASAI.Ventas_salida.resources
+C:\Users\Nehue\Desktop\Stock\SASAI\obj\Debug\SASAI.Ventas_Listar.resources

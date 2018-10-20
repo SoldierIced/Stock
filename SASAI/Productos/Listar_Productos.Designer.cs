@@ -175,6 +175,7 @@
             this.groupBox1.Size = new System.Drawing.Size(670, 161);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox3
             // 

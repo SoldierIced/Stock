@@ -74,6 +74,34 @@ namespace SASAI
 
         }
 
+        public int descontarstock(int val) {
+            string consulta = "";
+
+            if (stock - val >= 0)
+                {
+                int sto = stock - val;
+                consulta = "update ProductosxMarca set stock=" + sto + " where CodigoM='" + CodigoM + "' and CodigoP='" + CodigoP + "' ";
+                AccesoDatos aq = new AccesoDatos();
+                try
+                {
+                    aq.aplicarconsultasql(consulta);
+                    return 1;
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("ERROR Prod.Venta 1");
+                    Application.Exit();
+                    return 0;
+                }
+             
+
+            }
+            else { return 0; }
+
+
+         
+        }
         public int validar_Existe() {
             
             string consulta = "select * from ProductosxMarca";
