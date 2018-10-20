@@ -95,6 +95,7 @@
             this.editarProductoToolStripMenuItem.Name = "editarProductoToolStripMenuItem";
             this.editarProductoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editarProductoToolStripMenuItem.Text = "Editar producto";
+            this.editarProductoToolStripMenuItem.Click += new System.EventHandler(this.editarProductoToolStripMenuItem_Click);
             // 
             // nuevoProductoToolStripMenuItem
             // 

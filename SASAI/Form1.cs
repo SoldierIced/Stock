@@ -61,5 +61,16 @@ namespace SASAI
                 Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo,es.codigo_MARCA));
              }
         }
+
+        private void editarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Escanear es = new Escanear();
+
+            Formularios.AbrirFormularioHijos(es);
+            if (es.DialogResult == DialogResult.OK)
+            {
+                Formularios.AbrirFormularioHijos(new Modificar_Producto(es.codigo, es.codigo_MARCA));
+            }
+        }
     }
 }

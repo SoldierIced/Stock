@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Productos\Modificar_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\Modificar_Producto.Designer.cs">
+      <DependentUpon>Modificar_Producto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Productos\Alta_producto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="Varios\Validacion.Designer.cs">
       <DependentUpon>Validacion.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Productos\Modificar_Producto.resx">
+      <DependentUpon>Modificar_Producto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Alta_producto.resx">
       <DependentUpon>Alta_producto.cs</DependentUpon>
     </EmbeddedResource>

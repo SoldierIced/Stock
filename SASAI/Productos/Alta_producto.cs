@@ -186,5 +186,10 @@ namespace SASAI
 
 
         }
+
+        private void precio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

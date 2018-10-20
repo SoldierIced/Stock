@@ -175,6 +175,7 @@
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(66, 20);
             this.precio.TabIndex = 15;
+            this.precio.TextChanged += new System.EventHandler(this.precio_TextChanged);
             this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
             // 
             // stock

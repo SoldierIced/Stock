@@ -20,7 +20,7 @@ go
 create table ProductosxMarca (
 CodigoM nvarchar(50) not null, -- codigo de barra de la marca.
 CodigoP nvarchar(50) not null,-- codigo de barra del producto
-CodigoT int not null, -- 1 perfumes , 2-- colores
+CodigoT nvarchar(50) not null, -- 1 perfumes , 2-- colores
 NombreP nvarchar(300) not null,-- nombre producto: GALLETITAS DE CHOCOLATE o "perfume sabor chocolate"
 DetalleP nvarchar(300) not null,-- cosa especifica del prodcuto: "250g, 6 unidades." o "200 mililitros.
 stock int not null default 0, -- cantidad de stock disponible.
