@@ -52,7 +52,7 @@ namespace SASAI
                             {
                                 comboBox1.Items.Clear();
                                 comboBox1.Items.Add(t.Rows[i][1].ToString());// intentar asociar con el codigo x defecto a la marca.
-                                comboBox1.SelectedIndex = i;
+                                comboBox1.SelectedIndex = comboBox1.Items.Count-1;
                                 // tipo.Items.Add(p.tipo_string());
 
                                 i = t.Rows.Count;
@@ -106,14 +106,14 @@ namespace SASAI
             }
             else {
   p.set_codigoM(Marca.Codigo_Marca(comboBox1.Items[comboBox1.SelectedIndex].ToString()));
-   MessageBox.Show(Marca.Codigo_Marca(comboBox1.Items[comboBox1.SelectedIndex].ToString()));
+  // MessageBox.Show(Marca.Codigo_Marca(comboBox1.Items[comboBox1.SelectedIndex].ToString()));
 
             }
             if (tipo.SelectedIndex ==-1) { guardar = false;
                error+="\n * Debe seleccionar un tipo."; }
                 else {
-                if (tipo.Items[tipo.SelectedIndex].ToString() == "Perfumes") { p.set_CodigoT(1); }
-                else { p.set_CodigoT(2); }
+                if (tipo.Items[tipo.SelectedIndex].ToString() == "Perfumes") { p.set_CodigoT("Perfumes"); }
+                else { p.set_CodigoT("Colores"); }
                 }
 
             if (p.set_NombreP(textBox3.Text) == 0) { guardar = false;
@@ -125,7 +125,7 @@ namespace SASAI
             if (p.set_Stock(int.Parse(stock.Text)) == 0) { guardar = false;
                 error += "\n * El stock debe ser mayor o igual a 1.";
             }
-            if (p.set_precio(float.Parse(precio.Text)) == 0) { guardar = false;
+            if (p.set_precio(precio.Text) == 0) { guardar = false;
                 error += "\n * El Precio debe ser mayor o igual a 1.";
             }
 

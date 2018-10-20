@@ -15,26 +15,26 @@ namespace SASAI
         private string CodigoM = "";
         private string CodigoP = "";
         private string NombreP= "";//nombre producto: GALLETITAS DE CHOCOLATE o "perfume sabor chocolate"
-        private int CodigoT=0 ; //-- 1 perfumes , 2-- colores
+        private string CodigoT="" ; //-- 1 perfumes , 2-- colores
         private string DetalleP= "";//-- cosa especifica del prodcuto: "250g, 6 unidades." o "200 mililitros.
         private int stock = 0;
-        private float precio = 0;
+        private string precio = "";
 
         public string get_codigoM() { return CodigoM; }
         public string get_CodigoP() { return CodigoP; }
         public string get_NombreP() { return NombreP; }
         public string get_DetalleP() { return DetalleP; }
         public int get_stock() { return stock; }
-        public int get_CodigoT() { return CodigoT; }
-        public float get_precio() { return precio; }
+        public string get_CodigoT() { return CodigoT; }
+        public string get_precio() { return precio; }
 
         public void set_codigoM(string val) { CodigoM = val; }
         public void set_CodigoP(string val) { CodigoP = val; }
-        public void set_CodigoT(int val) { CodigoT = val; }
+        public void set_CodigoT(string val) { CodigoT = val; }
         public int set_NombreP(string val) { if (val.Length <= 300) { NombreP = val; return 1; }return 0; }
         public int set_DetalleP(string val) { if (val.Length <= 300) { DetalleP = val;return 1; }return 0; }
         public int set_Stock(int val) { if (val >= 1) { stock = val;return 1; }return 0; }
-        public int set_precio(float val) { if (val >= 1) { precio = val;return 1; }return 0; }
+        public int set_precio(string val) { try { if (float.Parse(val) >= 1) { precio = val; return 1; } return 0; } catch (Exception) { return 0; } }
        
         public Producto() { }
         public  Producto(string marcaC, string productoC) {
@@ -45,19 +45,18 @@ namespace SASAI
             {
                 if (t.Rows.Count != 0)
                 {
-                    string CodigoM = t.Rows[0][0].ToString();
-                    string CodigoP = t.Rows[0][1].ToString();
-                    if (t.Rows[0][2].ToString() != "")
-                    {
-                         CodigoT = int.Parse(t.Rows[0][2].ToString());
-                    }
+                     CodigoM = t.Rows[0][0].ToString();
+                     CodigoP = t.Rows[0][1].ToString();
+                    
+                         CodigoT =t.Rows[0][2].ToString();
+                    
 
-                    string NombreP = t.Rows[0][3].ToString();
-                    string DetalleP = t.Rows[0][4].ToString();
+                     NombreP = t.Rows[0][3].ToString();
+                     DetalleP = t.Rows[0][4].ToString();
                     if (t.Rows[0][5].ToString() != "")
                     {  stock = int.Parse(t.Rows[0][5].ToString()); }
                     if (t.Rows[0][6].ToString() != "")
-                    { precio  = float.Parse(t.Rows[0][6].ToString()); }
+                    { precio  = t.Rows[0][6].ToString(); }
                 }
                 else {
                   
@@ -113,29 +112,30 @@ namespace SASAI
             catch (Exception ex) {
 
                 return -1;
-
+                }
             }
-         
+        public int update_producto() {
+
+            string pre = precio.Replace(",", ".");
+            string consulta = "update ProductosxMarca  set CodigoT = '"+CodigoT+"', NombreP = '"+NombreP+"', DetalleP =" +
+                " '"+DetalleP+"', stock ="+stock+", precio ="+pre+" where CodigoM = '"+CodigoM+"' and CodigoP = '"+CodigoP+"'";
+            
+            AccesoDatos aq = new AccesoDatos();
+            try
+            {
+                aq.aplicarconsultasql(consulta);
+                return 1;
+            }
+            catch (Exception) {
+                return 0;
+            }
+        }
+        public static DataTable Todos_productos(string consulta= "select * from ProductosxMarca")
+        {
+            
+            AccesoDatos aq = new AccesoDatos();
+            return aq.ObtenerTabla("productos", consulta);
         }
 
-        public string tipo_string() {
-
-            switch (CodigoT) {
-
-                case 1:
-                    return "Perfumes";
-                    break;
-                case 2:
-                    return "Colores";
-                    break;
-                default:
-                    return "";
-                    break;
-
-            }
-            
-
-            
-        }
     }
 }
