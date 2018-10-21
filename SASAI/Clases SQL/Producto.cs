@@ -110,7 +110,7 @@ namespace SASAI
                 DataTable t = aq.ObtenerTabla("Productos", consulta);
 
                 for (int i = 0; i < t.Rows.Count; i++) { 
-                    if (t.Rows[0][0].ToString() == CodigoM && t.Rows[0][0].ToString()==CodigoP)
+                    if (t.Rows[i][0].ToString() == CodigoM && t.Rows[i][1].ToString()==CodigoP)
                     {
                         return i;
                     }

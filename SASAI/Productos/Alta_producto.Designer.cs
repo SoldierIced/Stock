@@ -52,7 +52,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(219, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBox1.TabIndex = 100000;
             // 
             // label1
             // 
@@ -89,7 +89,7 @@
             this.textBox3.Location = new System.Drawing.Point(146, 86);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(503, 20);
-            this.textBox3.TabIndex = 4;
+            this.textBox3.TabIndex = 5;
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label4
@@ -112,6 +112,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 13;
             this.comboBox1.Location = new System.Drawing.Point(418, 27);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(236, 21);
@@ -124,7 +125,7 @@
             this.button1.Location = new System.Drawing.Point(220, 188);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 33);
-            this.button1.TabIndex = 9;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -136,7 +137,7 @@
             this.button2.Location = new System.Drawing.Point(340, 188);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 33);
-            this.button2.TabIndex = 10;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -144,6 +145,7 @@
             // tipo
             // 
             this.tipo.FormattingEnabled = true;
+            this.tipo.ItemHeight = 13;
             this.tipo.Location = new System.Drawing.Point(147, 54);
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(219, 21);
@@ -174,7 +176,7 @@
             this.precio.Location = new System.Drawing.Point(428, 58);
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(66, 20);
-            this.precio.TabIndex = 15;
+            this.precio.TabIndex = 3;
             this.precio.TextChanged += new System.EventHandler(this.precio_TextChanged);
             this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
             // 
@@ -183,7 +185,7 @@
             this.stock.Location = new System.Drawing.Point(553, 60);
             this.stock.Name = "stock";
             this.stock.Size = new System.Drawing.Size(96, 20);
-            this.stock.TabIndex = 17;
+            this.stock.TabIndex = 4;
             this.stock.Text = "1";
             this.stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 

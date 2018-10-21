@@ -83,10 +83,11 @@
             this.marca.Location = new System.Drawing.Point(151, 16);
             this.marca.Name = "marca";
             this.marca.Size = new System.Drawing.Size(327, 21);
-            this.marca.TabIndex = 3;
+            this.marca.TabIndex = 1;
             this.marca.SelectedIndexChanged += new System.EventHandler(this.marca_SelectedIndexChanged);
             this.marca.TextUpdate += new System.EventHandler(this.marca_TextUpdate);
             this.marca.SelectedValueChanged += new System.EventHandler(this.marca_SelectedValueChanged);
+            this.marca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.marca_KeyPress);
             // 
             // label3
             // 
@@ -103,7 +104,8 @@
             this.NombreP.Location = new System.Drawing.Point(151, 70);
             this.NombreP.Name = "NombreP";
             this.NombreP.Size = new System.Drawing.Size(507, 20);
-            this.NombreP.TabIndex = 7;
+            this.NombreP.TabIndex = 3;
+            this.NombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreP_KeyPress);
             // 
             // label4
             // 
@@ -141,7 +143,8 @@
             this.Tipo.Location = new System.Drawing.Point(63, 43);
             this.Tipo.Name = "Tipo";
             this.Tipo.Size = new System.Drawing.Size(277, 21);
-            this.Tipo.TabIndex = 13;
+            this.Tipo.TabIndex = 2;
+            this.Tipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Tipo_KeyPress);
             // 
             // button1
             // 
@@ -149,7 +152,7 @@
             this.button1.Location = new System.Drawing.Point(202, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 30);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 7;
             this.button1.Text = "Filtrar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -195,7 +198,6 @@
             this.pmen.Name = "pmen";
             this.pmen.Size = new System.Drawing.Size(37, 17);
             this.pmen.TabIndex = 20;
-            this.pmen.TabStop = true;
             this.pmen.Text = "<=";
             this.pmen.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +208,6 @@
             this.pigu.Name = "pigu";
             this.pigu.Size = new System.Drawing.Size(31, 17);
             this.pigu.TabIndex = 22;
-            this.pigu.TabStop = true;
             this.pigu.Text = "=";
             this.pigu.UseVisualStyleBackColor = true;
             // 
@@ -217,7 +218,6 @@
             this.pmay.Name = "pmay";
             this.pmay.Size = new System.Drawing.Size(37, 17);
             this.pmay.TabIndex = 21;
-            this.pmay.TabStop = true;
             this.pmay.Text = ">=";
             this.pmay.UseVisualStyleBackColor = true;
             // 
@@ -238,8 +238,7 @@
             this.smen.Location = new System.Drawing.Point(6, 10);
             this.smen.Name = "smen";
             this.smen.Size = new System.Drawing.Size(37, 17);
-            this.smen.TabIndex = 20;
-            this.smen.TabStop = true;
+            this.smen.TabIndex = 6;
             this.smen.Text = "<=";
             this.smen.UseVisualStyleBackColor = true;
             // 
@@ -250,7 +249,6 @@
             this.sigu.Name = "sigu";
             this.sigu.Size = new System.Drawing.Size(31, 17);
             this.sigu.TabIndex = 22;
-            this.sigu.TabStop = true;
             this.sigu.Text = "=";
             this.sigu.UseVisualStyleBackColor = true;
             // 
@@ -260,25 +258,26 @@
             this.smay.Location = new System.Drawing.Point(43, 10);
             this.smay.Name = "smay";
             this.smay.Size = new System.Drawing.Size(37, 17);
-            this.smay.TabIndex = 21;
-            this.smay.TabStop = true;
+            this.smay.TabIndex = 7;
             this.smay.Text = ">=";
             this.smay.UseVisualStyleBackColor = true;
             // 
             // detalle
             // 
             this.detalle.FormattingEnabled = true;
+            this.detalle.ItemHeight = 13;
             this.detalle.Location = new System.Drawing.Point(151, 100);
             this.detalle.Name = "detalle";
             this.detalle.Size = new System.Drawing.Size(507, 21);
-            this.detalle.TabIndex = 19;
+            this.detalle.TabIndex = 4;
+            this.detalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.detalle_KeyPress);
             // 
             // precio
             // 
             this.precio.Location = new System.Drawing.Point(522, 133);
             this.precio.Name = "precio";
             this.precio.Size = new System.Drawing.Size(80, 20);
-            this.precio.TabIndex = 18;
+            this.precio.TabIndex = 6;
             this.precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label7
@@ -296,7 +295,7 @@
             this.stock.Location = new System.Drawing.Point(190, 131);
             this.stock.Name = "stock";
             this.stock.Size = new System.Drawing.Size(80, 20);
-            this.stock.TabIndex = 16;
+            this.stock.TabIndex = 5;
             this.stock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
             // 
             // button2
@@ -305,7 +304,7 @@
             this.button2.Location = new System.Drawing.Point(337, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 30);
-            this.button2.TabIndex = 17;
+            this.button2.TabIndex = 8;
             this.button2.Text = "Borrar Filtros";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);

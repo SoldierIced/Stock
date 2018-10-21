@@ -75,7 +75,7 @@ namespace SASAI
         }
 
 
-        void cargaInicial(string consulta = "select Marcas.NombreM as [Marca],CodigoT as [Tipo],NombreP as [Nombre del Producto],DetalleP as [Detalle del Producto],Stock,Precio, CodigoP as [Codigo Producto] from" +
+        void cargaInicial(string consulta = "select top(50) Marcas.NombreM as [Marca],CodigoT as [Tipo],NombreP as [Nombre del Producto],DetalleP as [Detalle del Producto],Stock,Precio, CodigoP as [Codigo Producto] from" +
                  " ProductosxMarca inner join Marcas on Marcas.CodigoM = ProductosxMarca.CodigoM") {
            
             cargargrid(consulta);
@@ -94,9 +94,12 @@ namespace SASAI
             gv.Width = this.Width - 20;
             groupBox1.Width = this.Width - 70;
         }
+      
 
+        
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
+           
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
             (e.KeyChar != '.'))
@@ -113,7 +116,7 @@ namespace SASAI
 
         private void precio_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+           
             if (Char.IsDigit(e.KeyChar)) { e.Handled = false; }
             else if (Char.IsControl(e.KeyChar)) { e.Handled = false; }
             else if (Char.IsSeparator(e.KeyChar)) { e.Handled = false; }
@@ -307,10 +310,10 @@ namespace SASAI
                 int row = e.RowIndex;
                 int cel = e.ColumnIndex;
                 string codigo = Marca.Codigo_Marca(gv.Rows[row].Cells["Marca"].Value.ToString());
-            Producto p = new Producto(codigo, gv.Rows[row].Cells["Codigo Producto"].Value.ToString());
+          
             try
             {
-
+                    Producto p = new Producto(codigo, gv.Rows[row].Cells["Codigo Producto"].Value.ToString());
                     if (gv.Columns[cel].HeaderText == "Stock")
                     {
                         try
@@ -372,6 +375,39 @@ namespace SASAI
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void marca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void Tipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+
+        }
+
+        private void NombreP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
+
+        private void detalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 }

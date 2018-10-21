@@ -59,5 +59,18 @@ namespace SASAI
         {
 
         }
+
+        private void Escanear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+                button1_Click(sender, e);
+            }
+        }
     }
 }

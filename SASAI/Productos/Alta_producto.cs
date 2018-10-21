@@ -35,7 +35,7 @@ namespace SASAI
                
             }
         
-            if (a.DialogResult != DialogResult.OK || m.registro_Existente() != true)
+            if (a.DialogResult != DialogResult.OK || m.registro_Existente() == true)
             {
 
               p = new Producto(marca, textBox1.Text);
