@@ -69,7 +69,10 @@ namespace SASAI
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK)
             {
-                Formularios.AbrirFormularioHijos(new Modificar_Producto(es.codigo, es.codigo_MARCA));
+                Producto p = new Producto(es.codigo_MARCA, es.codigo);
+                if (p.get_codigoM() != string.Empty)
+                    Formularios.AbrirFormularioHijos(new Modificar_Producto(es.codigo, es.codigo_MARCA));
+                else { MessageBox.Show("Producto inexistente."); }
             }
         }
 
@@ -85,10 +88,11 @@ namespace SASAI
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK)
             {
-                
-                Formularios.AbrirFormularioHijos(new Ventas_salida(es.codigo_MARCA, es.codigo));
+                Producto p = new Producto(es.codigo_MARCA, es.codigo);
+                if (p.get_codigoM() != string.Empty)
+                    Formularios.AbrirFormularioHijos(new Ventas_salida(es.codigo_MARCA, es.codigo));
+                else { MessageBox.Show("Producto inexistente."); }
 
-                
             }
         }
 

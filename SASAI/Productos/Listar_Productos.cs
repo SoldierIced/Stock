@@ -79,7 +79,9 @@ namespace SASAI
                  " ProductosxMarca inner join Marcas on Marcas.CodigoM = ProductosxMarca.CodigoM") {
            
             cargargrid(consulta);
+            if (gv.Rows.Count != 0) { 
             cargarcombos();
+            }
 
             inicial = 1;
         }

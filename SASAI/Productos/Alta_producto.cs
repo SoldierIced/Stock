@@ -102,7 +102,7 @@ namespace SASAI
             string error = "No se pudo guardar el producto por los siguientes errores:";
 
             if (comboBox1.SelectedIndex ==-1) { guardar = false;
-                error += "\n * Debe seleccionar una marca.";
+                error += "\n * Debe seleccionar una marca existente.";
             }
             else {
   p.set_codigoM(Marca.Codigo_Marca(comboBox1.Items[comboBox1.SelectedIndex].ToString()));
@@ -110,21 +110,31 @@ namespace SASAI
 
             }
             if (tipo.SelectedIndex ==-1) { guardar = false;
-               error+="\n * Debe seleccionar un tipo."; }
+               error+="\n * Debe seleccionar un tipo existente."; }
                 else {
                 if (tipo.Items[tipo.SelectedIndex].ToString() == "Perfumes") { p.set_CodigoT("Perfumes"); }
                 else { p.set_CodigoT("Colores"); }
                 }
 
-            if (p.set_NombreP(textBox3.Text) == 0) { guardar = false;
-                error += "\n * El nombre solo puede tener 300 caracteres.";
+            if (p.set_NombreP(textBox3.Text) == 0|| textBox3.Text==string.Empty) { guardar = false;
+                error += "\n * El nombre solo puede tener 300 caracteres y no puede estar vacio.";
             }
-            if (p.set_DetalleP(textBox4.Text) == 0) { guardar = false;
-                error += "\n * El Detalle solo puede tener 300 caracteres.";
+            if (p.set_DetalleP(textBox4.Text) == 0||textBox4.Text==string.Empty) { guardar = false;
+                error += "\n * El Detalle solo puede tener 300 caracteres y no puede estar vacio.";
             }
-            if (p.set_Stock(int.Parse(stock.Text)) == 0) { guardar = false;
+            try
+            {
+                if (p.set_Stock(int.Parse(stock.Text)) == 0)
+                {
+                    guardar = false;
+                    error += "\n * El stock debe ser mayor o igual a 1.";
+                }
+            }
+            catch (Exception)
+            {
                 error += "\n * El stock debe ser mayor o igual a 1.";
             }
+           
             if (p.set_precio(precio.Text) == 0) { guardar = false;
                 error += "\n * El Precio debe ser mayor o igual a 1.";
             }

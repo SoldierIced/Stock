@@ -25,17 +25,24 @@ namespace SASAI
         {
             m.nombreM = textBox2.Text;
             m.DetalleM = textBox3.Text;
-
-            if (m.registro_update() == true)
+            if (textBox2.Text != string.Empty)
             {
+                if (m.registro_update() == true)
+                {
 
-                this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Marca Editada correctamente.");
-                this.Close();
+                    this.DialogResult = DialogResult.OK;
+                    MessageBox.Show("Marca Editada correctamente.");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error N2 Marca.");
+                    Application.Exit();
+                }
             }
             else {
-                MessageBox.Show("Error N2 Marca.");
-                Application.Exit();
+                MessageBox.Show("PorfaIngrese un nombre de marca.");
+
             }
         }
 

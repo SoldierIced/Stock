@@ -27,39 +27,57 @@ namespace SASAI
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        { bool error = false;
             ma.codigoM = textBox1.Text;
             ma.nombreM = textBox2.Text;
-            if (ma.set_detalle(textBox3.Text) == true)
+            if (textBox2.Text != string.Empty)
             {
-                ma.DetalleM = textBox3.Text;
-                if (ma.registro_Existente() == false)
+                if (textBox3.Text != string.Empty)
                 {
-                    if (ma.registro_Alta() == true)
+                }
+                else {
+                    error = true;
+                }
+            }
+            else { error = true; }
+
+            if (error != true)
+            {
+                if (ma.set_detalle(textBox3.Text) == true)
+                {
+                    ma.DetalleM = textBox3.Text;
+                    if (ma.registro_Existente() == false)
                     {
-                        MessageBox.Show("Marca dada de alta.");
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        if (ma.registro_Alta() == true)
+                        {
+                            MessageBox.Show("Marca dada de alta.");
+                            this.DialogResult = DialogResult.OK;
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("error M1");
+                            Application.Exit();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("error M1");
-                        Application.Exit();
+
+                        MessageBox.Show("Esa Marca ya esta dada de alta.");
+                        this.Close();
                     }
-                }
-                else {
 
-                    MessageBox.Show("Esa Marca ya esta dada de alta.");
-                    this.Close();
                 }
-
+                else
+                {
+                    MessageBox.Show("No se puede ingresar mas de 300 caracteres.");
+                }
             }
             else {
-                MessageBox.Show("No se puede ingresar mas de 300 caracteres.");
-            }
+                MessageBox.Show("Porfavor ingrese los datos para continuar.");
+        }
 
 
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
