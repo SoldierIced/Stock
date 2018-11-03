@@ -24,7 +24,7 @@ namespace SASAI
             precio = float.Parse(p);
             string consulta = "insert into ventas(codigom, codigop, codigot, cantidad,precio) select '"+codigoM+"','"+codigoP+"','"+codigoT+"',"+cantidad+","+p;
             AccesoDatos aq = new AccesoDatos();
-            MessageBox.Show(consulta);
+           // MessageBox.Show(consulta);
             try
             {
 

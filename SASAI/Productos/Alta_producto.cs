@@ -25,19 +25,6 @@ namespace SASAI
         private void Alta_producto_Load(object sender, EventArgs e)
         {
 
-            Marca m = new Marca();
-            Alta_Materia a = new Alta_Materia(marca);
-            m.codigoM = marca;
-            if (m.registro_Existente() != true) {
-                MessageBox.Show("Codigo de Marca inexistente. Carguela Primero.");
-                
-                Formularios.AbrirFormularioHijos(a);
-               
-            }
-        
-            if (a.DialogResult != DialogResult.OK || m.registro_Existente() == true)
-            {
-
               p = new Producto(marca, textBox1.Text);
                 if (p.validar_Existe() == -1)
                 //validar que no exista ya el producto ?
@@ -81,10 +68,7 @@ namespace SASAI
                     MessageBox.Show("Ya existe ese codigo de producto en esta marca.");
                     this.Close();
                 }
-            }
-            else {
-                this.Close();
-            }
+            
 
 
         }

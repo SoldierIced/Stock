@@ -43,11 +43,12 @@
             // marcat
             // 
             this.marcat.Location = new System.Drawing.Point(86, 23);
-            this.marcat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.marcat.Margin = new System.Windows.Forms.Padding(6);
             this.marcat.Name = "marcat";
             this.marcat.ReadOnly = true;
             this.marcat.Size = new System.Drawing.Size(265, 29);
-            this.marcat.TabIndex = 0;
+            this.marcat.TabIndex = 3;
+            this.marcat.TabStop = false;
             // 
             // label1
             // 
@@ -77,6 +78,7 @@
             this.nombret.ReadOnly = true;
             this.nombret.Size = new System.Drawing.Size(490, 29);
             this.nombret.TabIndex = 2;
+            this.nombret.TabStop = false;
             // 
             // label3
             // 
@@ -96,13 +98,14 @@
             this.detallet.ReadOnly = true;
             this.detallet.Size = new System.Drawing.Size(588, 29);
             this.detallet.TabIndex = 4;
+            this.detallet.TabStop = false;
             // 
             // cantidadt
             // 
             this.cantidadt.Location = new System.Drawing.Point(325, 156);
             this.cantidadt.Name = "cantidadt";
             this.cantidadt.Size = new System.Drawing.Size(153, 29);
-            this.cantidadt.TabIndex = 6;
+            this.cantidadt.TabIndex = 0;
             this.cantidadt.Text = "1";
             this.cantidadt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
@@ -122,7 +125,7 @@
             this.button1.Location = new System.Drawing.Point(147, 212);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 35);
-            this.button1.TabIndex = 8;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -133,7 +136,7 @@
             this.button2.Location = new System.Drawing.Point(434, 212);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 35);
-            this.button2.TabIndex = 9;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -154,7 +157,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.marcat);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Ventas_salida";
             this.Text = "Ventas_salida";
             this.Load += new System.EventHandler(this.Ventas_salida_Load);

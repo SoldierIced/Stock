@@ -32,12 +32,7 @@ namespace SASAI
             ma.nombreM = textBox2.Text;
             if (textBox2.Text != string.Empty)
             {
-                if (textBox3.Text != string.Empty)
-                {
-                }
-                else {
-                    error = true;
-                }
+                
             }
             else { error = true; }
 

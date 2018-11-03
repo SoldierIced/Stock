@@ -24,7 +24,19 @@ namespace SASAI
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK)
             {
-                Formularios.AbrirFormularioHijos(new Alta_Materia(es.codigo_MARCA));
+                Marca m = new Marca();
+                Alta_Materia a = new Alta_Materia(es.codigo_MARCA);
+                m.codigoM = es.codigo_MARCA;
+                if (m.registro_Existente() == true)
+                {
+                    MessageBox.Show("Codigo de Marca ya creado.");
+
+
+
+                }
+                else {
+                    Formularios.AbrirFormularioHijos(new Alta_Materia(es.codigo_MARCA));
+                }
 
             }
 
@@ -38,9 +50,17 @@ namespace SASAI
 
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK) {
-                
-                
-                Formularios.AbrirFormularioHijos(new Editar_Marca(es.codigo_MARCA));
+                Marca m = new Marca();
+                Alta_Materia a = new Alta_Materia(es.codigo_MARCA);
+                m.codigoM = es.codigo_MARCA;
+                if (m.registro_Existente() != true)
+                {
+                    MessageBox.Show("Codigo de Marca inexistente.");
+
+                }
+                else { Formularios.AbrirFormularioHijos(new Editar_Marca(es.codigo_MARCA)); }
+
+              
             }
            
         }
@@ -58,7 +78,29 @@ namespace SASAI
             Formularios.AbrirFormularioHijos(es);
             if (es.DialogResult == DialogResult.OK)
             {
-                Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo,es.codigo_MARCA));
+
+                Marca m = new Marca();
+                Alta_Materia a = new Alta_Materia(es.codigo_MARCA);
+                m.codigoM = es.codigo_MARCA;
+                if (m.registro_Existente() != true)
+                {
+                    MessageBox.Show("Codigo de Marca inexistente. Carguela Primero.");
+
+                    Formularios.AbrirFormularioHijos(a);
+                    if (a.DialogResult == DialogResult.OK)
+                    {
+                        Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo, es.codigo_MARCA));
+                    }
+                }
+                else {
+                    Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo, es.codigo_MARCA));
+                }
+
+               
+
+
+
+              
              }
         }
 
@@ -89,8 +131,14 @@ namespace SASAI
             if (es.DialogResult == DialogResult.OK)
             {
                 Producto p = new Producto(es.codigo_MARCA, es.codigo);
-                if (p.get_codigoM() != string.Empty)
-                    Formularios.AbrirFormularioHijos(new Ventas_salida(es.codigo_MARCA, es.codigo));
+                if (p.get_codigoM() != string.Empty) {
+
+                    Ventas_salida ve = new Ventas_salida(es.codigo_MARCA, es.codigo);
+                    Formularios.AbrirFormularioHijos(ve);
+                    if (ve.DialogResult == DialogResult.OK) { 
+                Formularios.AbrirFormularioPadre(new Ventas_Listar());
+                        }
+                }
                 else { MessageBox.Show("Producto inexistente."); }
 
             }
@@ -104,15 +152,33 @@ namespace SASAI
         private void nuevoProductoMasivoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool seguir = true;
-            while (seguir==true) { 
-            Escanear es = new Escanear();
-
-            Formularios.AbrirFormularioHijos(es);
-            if (es.DialogResult == DialogResult.OK)
+            while (seguir == true)
             {
-                Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo, es.codigo_MARCA));
-            }
-            else { seguir = false; }
+               Escanear es = new Escanear();
+                Formularios.AbrirFormularioHijos(es);
+                if (es.DialogResult == DialogResult.OK)
+                {
+
+                    Marca m = new Marca();
+                    Alta_Materia a = new Alta_Materia(es.codigo_MARCA);
+                    m.codigoM = es.codigo_MARCA;
+                    if (m.registro_Existente() != true)
+                    {
+                        MessageBox.Show("Codigo de Marca inexistente. Carguela Primero.");
+
+                        Formularios.AbrirFormularioHijos(a);
+                        if (a.DialogResult == DialogResult.OK)
+                        {
+                            Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo, es.codigo_MARCA));
+                        }
+                    }
+                    else
+                    {
+                        Formularios.AbrirFormularioHijos(new Alta_producto(es.codigo, es.codigo_MARCA));
+                    }
+
+                }
+                else { seguir = false; }
             }
         }
     }
